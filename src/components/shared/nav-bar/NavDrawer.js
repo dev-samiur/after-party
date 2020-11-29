@@ -13,6 +13,7 @@ import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import ChatIcon from '@material-ui/icons/Chat';
 import PersonIcon from '@material-ui/icons/Person';
 import Badge from '@material-ui/core/Badge';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   list: {
@@ -47,19 +48,19 @@ export default function NavDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button>
+        <ListItem component={Link} to="/webinars">
             <ListItemIcon> <EventIcon color="primary" /> </ListItemIcon>
             <ListItemText primary={"Event"} />
         </ListItem>
-        <ListItem button>
+        <ListItem component={Link} to="/groups">
             <ListItemIcon> <GroupWorkIcon color="primary" /> </ListItemIcon>
             <ListItemText primary={"Groups"} />
         </ListItem>
-        <ListItem button>
+        <ListItem component={Link} to="/chats">
             <ListItemIcon> <ChatIcon color="primary" /> </ListItemIcon>
             <Badge badgeContent={4} color="error"><ListItemText primary={"Chats"} /></Badge>
         </ListItem>
-        <ListItem button>
+        <ListItem component={Link} to="/my-profile">
             <ListItemIcon> <PersonIcon color="primary" /> </ListItemIcon>
             <ListItemText primary={"Profile"} />
         </ListItem>
