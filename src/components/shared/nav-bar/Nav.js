@@ -8,6 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import SearchIcon from '@material-ui/icons/Search';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import NavDrawer from './NavDrawer'
 
@@ -97,11 +98,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Nav() {
+export default function Nav() {
   const classes = useStyles();
 
   return (
-    <div style={{background: '#fff'}}>
+    <Box style={{background: '#fff', boxShadow:'2px 2px 5px #DDD',}}>
         <Container className={classes.grow}>
             <AppBar position="static" elevation={0} className={classes.appbar}>
                 <Toolbar className={classes.toolbar} >
@@ -142,6 +143,6 @@ export function Nav() {
                 </Toolbar>
              </AppBar>
             </Container>
-    </div>
+    </Box>
   );
 }

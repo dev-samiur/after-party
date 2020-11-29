@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -19,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '20px 10px 0px 10px',
-        textAlign: 'center',
         borderRadius: 10,
         marginTop: 15,
+        marginBottom: 20,
         textAlign: 'end',
+        boxShadow:'2px 2px 5px #DDD',
         [theme.breakpoints.down('sm')]: {
             textAlign: 'start'
         },
@@ -32,7 +32,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '100%'
         },
-    }
+    },
+    button: {
+        margin: theme.spacing(1),
+    },
+
 }))
 
 
@@ -43,7 +47,6 @@ export default function WebinarJoinForm() {
     const mobDevices = useMediaQuery('(max-width:600px)');
 
     return (
-        <Container>
             <form className={classes.container}>
                 <Box width={ mobDevices ? '100%' : 'auto'} display="flex" alignItems={ matches ? 'flex-start' : 'center'}  flexDirection={ matches ? 'column' : 'row'}>
                     <Box width="200px" mr={3} mb={ matches ? 2 : 0 }><Typography style={{fontWeight: 600}}>Name:</Typography></Box>
@@ -193,8 +196,8 @@ export default function WebinarJoinForm() {
                     <Box width="200px" mr={3} mb={ matches ? 2 : 0 } ><Typography style={{fontWeight: 600}}>Upload Picture:</Typography></Box>
                     <Box width={ mobDevices ? '100%' : '300px'}  display="flex">
                         <TextField variant="outlined"  size="small" className={classes.textField} />
-                        <Button component="label" variant="outlined" color="primary"style={{width: 150, marginLeft: 10}}>
-                            <CloudUploadIcon color="primary" style={{marginRight: 5, marginTop: -5}}/>
+                        <Button size="large" component="label" variant="outlined" color="primary"style={{marginLeft: 10}}>
+                            <CloudUploadIcon color="primary" style={{marginRight: 5,}}/>
                             <input
                                 type="file"
                                 style={{ display: "none" }}
@@ -218,16 +221,15 @@ export default function WebinarJoinForm() {
                 </Box>
                 <Box width="100%" justifyContent="center" mt={6} mb={3} style={{ textAlign: 'center'}}>
                     <Button
-                        style={{width: 150}}
+                        size="large"
                         variant="contained"
                         color="primary"
                         className={classes.button}
-                        startIcon={<ArrowForwardIcon />}
+                        startIcon={<ArrowForwardIcon style={{}} />}
                     >
                         Join
                     </Button>
                 </Box>
             </form>
-        </Container>
     )
 }

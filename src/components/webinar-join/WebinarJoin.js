@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../shared/Header'
 import WebinarJoinForm from './WebinarJoinForm'
-import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container'
 
 export function WebinarJoin() {
 
@@ -15,9 +15,9 @@ export function WebinarJoin() {
     })
 
     return (
-        <Box mb={5}>
+        <Container>
             <Header content={headerContent} />
             <WebinarJoinForm />
-        </Box>
+        </Container>
     )
 }

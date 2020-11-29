@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
@@ -16,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         borderRadius: 10,
         marginTop: 25,
+        boxShadow:'2px 2px 5px #DDD',
     }
 }))
 
@@ -25,7 +25,6 @@ export default function Header({content}) {
     const matches = useMediaQuery('(min-width:600px)');
 
     return (
-        <Container>
             
             <Box className={classes.container}>
                 {
@@ -67,7 +66,5 @@ export default function Header({content}) {
                         </Typography> : null
                 }
             </Box>
-            
-        </Container>
     )
 }
