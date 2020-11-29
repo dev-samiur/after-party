@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import NavDrawer from './NavDrawer'
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -35,8 +36,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFF',
     textAlign: 'center',
     width: 120,
-    padding: '5px 0px',
+    padding: '10px',
     cursor: 'pointer',
+    textDecoration: 'none'
   },
   search: {
     border: '1px solid #ccc',
@@ -106,8 +108,8 @@ export default function Nav() {
         <Container className={classes.grow}>
             <AppBar position="static" elevation={0} className={classes.appbar}>
                 <Toolbar className={classes.toolbar} >
-                    <div className={classes.title}>
-                        <Typography className={classes.titleText} variant="h6" noWrap>
+                    <div className={classes.title} >
+                        <Typography className={classes.titleText} variant="h6" noWrap component={Link} to="/" >
                             After Party
                         </Typography>
                     </div>
@@ -125,12 +127,12 @@ export default function Nav() {
                         />
                     </div>
                     <div className={classes.sectionDesktop}>
-                        <Button color="inherit">Events</Button>
-                        <Button color="inherit">Groups</Button>
+                        <Button color="inherit" component={Link} to="/webinars">Events</Button>
+                        <Button color="inherit" component={Link} to="/groups" >Groups</Button>
                         <Badge badgeContent={4} color="error">
-                            <Button color="inherit">Chats</Button>
+                            <Button color="inherit" component={Link} to="/chats" >Chats</Button>
                         </Badge>
-                        <Button color="inherit">Profile</Button>
+                        <Button color="inherit" component={Link} to="/my-profile">Profile</Button>
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton
